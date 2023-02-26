@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+शरीर {
+  समास: 0;
+  किमान-रुंदी: 250px;
+}
+
+
+* {
+  box-sizing: बॉर्डर-बॉक्स;
+}
+
+
+उल {
+  समास: 0;
+  पॅडिंग: 0;
+}
+
+
+उल लि {
+  कर्सर: पॉइंटर;
+  स्थिती: नातेवाईक;
+  पॅडिंग: 12px 8px 12px 40px;
+  सूची-शैली-प्रकार: काहीही नाही;
+  पार्श्वभूमी: #ffc0cb ;
+  फॉन्ट-आकार: 18px;
+  संक्रमण: 0.2s;
+  
+  
+  -वेबकिट-वापरकर्ता-निवडा: काहीही नाही;
+  -moz-वापरकर्ता-निवडा: काहीही नाही;
+  -ms-user-select: काहीही नाही;
+  वापरकर्ता-निवडा: काहीही नाही;
+}
+
+
+ul li:nth-child(विषम) {
+  पार्श्वभूमी: #fe2c54 ;
+}
+
+ul li:hover {
+  पार्श्वभूमी: #7FFF00;
+}
+
+
+ul li.checked {
+  पार्श्वभूमी: #888;
+  रंग: #fff;
+  मजकूर-सजावट: लाइन-थ्रू;
+}
+
+
+ul li.checked::before {
+  सामग्री: '';
+  स्थिती: निरपेक्ष;
+  बॉर्डर-रंग: #fff;
+  सीमा शैली: घन;
+  सीमा-रुंदी: 0 2px 2px 0;
+  शीर्ष: 10px;
+  डावीकडे: 16px;
+  रूपांतर: फिरवा(45deg);
+  उंची: 15px;
+  रुंदी: 7px;
+}
+
+
+.बंद {
+  स्थिती: निरपेक्ष;
+  उजवीकडे: 0;
+  शीर्ष: 0;
+  पॅडिंग: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  पार्श्वभूमी-रंग: #f44336;
+  रंग: पांढरा;
+}
+
+
+.हेडर {
+  पार्श्वभूमी-रंग: #7CFC00;
+  पॅडिंग: 30px 40px;
+  रंग: पांढरा;
+  मजकूर-संरेखित: केंद्र;
+}
+
+
+.header: नंतर {
+  सामग्री: "";
+  प्रदर्शन: टेबल;
+  स्पष्ट: दोन्ही;
+}
+
+इनपुट {
+  समास: 0;
+  सीमा: काहीही नाही;
+  सीमा-त्रिज्या: 0;
+  रुंदी: 75%;
+  पॅडिंग: 10px;
+  फ्लोट: डावीकडे;
+  फॉन्ट-आकार: 16px;
+}
+
+
+.addBtn {
+  पॅडिंग: 10px;
+  रुंदी: 25%;
+  पार्श्वभूमी: #FFFF00;
+  रंग: #FF0000;
+  फ्लोट: डावीकडे;
+  मजकूर-संरेखित: केंद्र;
+  फॉन्ट-आकार: 16px;
+  कर्सर: पॉइंटर;
+  संक्रमण: 0.3s;
+  सीमा-त्रिज्या: 0;
+}
+
+.addBtn:होवर {
+  पार्श्वभूमी-रंग: #bbb;
+}
+</style>
+</head>
+<body>
+
+<div id="myDIV" class="header">
+  <h2 style="margin:5px">माझे वेबअॅप करायचे आहे</h2>
+  <input type="text" id="myInput" प्लेसहोल्डर="शीर्षक...">
+  <span onclick="newElement()" class="addBtn">जोडा</span>
+</div>
+
+<ul id="myUL">
+  <li>सराव करा.</li>
+  <li class="checked">जलद धावा</li>
+  <li>निबंध लिहा</li>
+  <li>गाणे गा</li>
+  <li>पुस्तक वाचा</li>
+  <li>ऑफिस आयोजित करा</li>
+</ul>
+
+<script>
+
+var myNodelist = document.getElementsByTagName("LI");
+var मी;
+साठी (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "बंद करा";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+
+var close = document.getElementsByClassName("बंद");
+var मी;
+साठी (i = 0; i < close.length; i++) {
+  बंद करा[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "काहीही नाही";
+  }
+}
+
+
+var सूची = document.querySelector('ul');
+list.addEventListener('क्लिक', फंक्शन(ev) {
+  जर (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('चेक केलेले');
+  }
+}, खोटे);
+
+
+फंक्शन newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").मूल्य;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  जर (इनपुटव्हॅल्यू === '') {
+    इशारा ("तुम्ही काहीतरी लिहावे!");
+  } इतर {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "बंद करा";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  साठी (i = 0; i < close.length; i++) {
+    बंद करा[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "काहीही नाही";
+    }
+  }
+}
+</script>
+
+</body>
+</html>
